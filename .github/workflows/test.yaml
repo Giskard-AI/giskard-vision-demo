@@ -25,11 +25,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    # Setup gcloud CLI
-    - uses: 'google-github-actions/setup-gcloud@v2'
-      with:
-        version: '290.0.1'
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v2'
 
-    # List auth
-    - run: |-
-        gcloud auth list
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
