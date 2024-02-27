@@ -86,5 +86,5 @@ report = Report(models_list, dataloaders_list, dataloader_ref=dl_ref)
 
 df = report.to_dataframe()
 
-current_time = str(datetime.now())
-df.to_markdown("report_"+current_time.replace(" ", "")+".md")
+current_time = str(datetime.now()).replace(" ", "")
+df.to_markdown("report_"+current_time+".md")
