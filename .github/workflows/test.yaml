@@ -18,7 +18,7 @@ on: [push]
 
 jobs:
   show-auth:
-    name: Show gcloud auth
+    name: Run Giskard Tests
     runs-on: self-hosted
 
     steps:
@@ -34,7 +34,7 @@ jobs:
     - name: Run the Giskard report 🐢
       id: giskard_scan
       run: |
-        python report.py
+        python3.10 report.py
         output=$(find report -iname "*.md" -exec basename {} .md ';')
         echo "::set-output name=report_name::$output"
 
@@ -42,7 +42,7 @@ jobs:
       shell: bash
       run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       id: extract_branch
-      
+
     - name: Upload the report 🤖
       id: extract_sha
       run: |
