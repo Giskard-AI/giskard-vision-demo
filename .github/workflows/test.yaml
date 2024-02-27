@@ -30,3 +30,28 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info' 
+
+    - name: Run the Giskard report 🐢
+      id: giskard_scan
+      run: |
+        python report.py
+        output=$(find report -iname "*.md" -exec basename {} .md ';')
+        echo "::set-output name=report_name::$output"
+
+    - name: Extract branch name 🌲
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+      
+    - name: Upload the report 🤖
+      id: extract_sha
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        mkdir -p reports
+        cp ${{ steps.giskard_scan.outputs.report_name }} reports/.
+        cp reports/${{ steps.giskard_scan.outputs.report_name }} reports/latest.md
+        git add reports
+        git commit -m "🤖 github-bot: Updated Reports"
+        git push
+        echo "::set-output name=sha::$(git rev-parse HEAD)"
