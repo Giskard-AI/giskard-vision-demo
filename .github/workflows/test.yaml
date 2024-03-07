@@ -43,6 +43,12 @@ jobs:
       run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       id: extract_branch
 
+    - name: Merge report into Readme
+      shell: bash
+      run: |
+        rm README.md
+        cat README_template.md reports/latest.md >> README.md
+
     - name: Upload the report 🤖
       id: extract_sha
       run: |
@@ -51,7 +57,7 @@ jobs:
         mkdir -p reports
         cp ${{ steps.giskard_scan.outputs.report_name }} reports/.
         cp reports/${{ steps.giskard_scan.outputs.report_name }} reports/latest.md
-        git add reports
+        git add reports README.md
         git commit -m "🤖 github-bot: Updated Reports"
         git push
         echo "::set-output name=sha::$(git rev-parse HEAD)"
