@@ -36,11 +36,6 @@ jobs:
       run: |
         sh download_300W.sh
 
-    - name: Cache 300W indoor dataset
-      uses: actions/cache@v3
-      with:
-        path: 300W
-
     - name: Run the Giskard report 🐢
       id: giskard_scan
       run: |
