@@ -45,7 +45,7 @@ jobs:
       id: giskard_scan
       run: |
         python3.10 report.py
-        output=$(find . -iname "*.md" -exec basename {} ';')
+        output=$(find . -iname "report_*.md" -exec basename {} ';')
         echo "::set-output name=report_name::$output"
 
     - name: Extract branch name 🌲
