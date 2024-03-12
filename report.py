@@ -81,7 +81,7 @@ models_list = [
     OpenCVWrapper(),
 ]
 
-models_list = [models_list[1]]
+# models_list = [models_list[1]]
 
 report = Report(models_list, dataloaders_list, dataloader_ref=dl_ref)
 
