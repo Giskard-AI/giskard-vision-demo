@@ -53,20 +53,16 @@ jobs:
       run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       id: extract_branch
 
-    - name: Readme and Report handling
-      shell: bash
-      run: |
-        mkdir -p reports
-        cp ${{ steps.giskard_scan.outputs.report_name }} reports/.
-        cp reports/${{ steps.giskard_scan.outputs.report_name }} reports/latest.md
-        rm README.md
-        cat README_template.md reports/latest.md >> README.md
-
     - name: Upload the report 🤖
       id: extract_sha
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
+        mkdir -p reports
+        cp ${{ steps.giskard_scan.outputs.report_name }} reports/.
+        cp reports/${{ steps.giskard_scan.outputs.report_name }} reports/latest.md
+        rm README.md
+        cat README_template.md reports/latest.md >> README.md
         git add reports README.md
         git commit -m "🤖 github-bot: Updated Reports"
         git push
