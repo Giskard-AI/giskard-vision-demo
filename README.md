@@ -10,12 +10,12 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
 Here're the results of the latest run:
 |    | model   | facial_part   | dataloader                                                       |   prediction_time |   prediction_fail_rate | test     | metric   |   metric_value |   threshold | passed   |
 |---:|:--------|:--------------|:-----------------------------------------------------------------|------------------:|-----------------------:|:---------|:---------|---------------:|------------:|:---------|
-|  0 | OpenCV  | left half     | 300W cropped on left half                                        |           2.40592 |               0.564706 | TestDiff | NME_mean |      0.644057  |        -0.1 | False    |
-|  1 | OpenCV  | upper half    | 300W cropped on upper half                                       |           2.4346  |               0.682353 | TestDiff | NME_mean |     -0.0402161 |        -0.1 | False    |
-|  2 | OpenCV  | entire face   | 300W resizing with ratios: 0.5                                   |           2.42588 |               0        | TestDiff | NME_mean |      0.079876  |        -0.1 | False    |
-|  3 | OpenCV  | entire face   | 300W altered with color mode 7                                   |           3.57846 |               0        | TestDiff | NME_mean |     -0.0013471 |        -0.1 | False    |
-|  4 | OpenCV  | entire face   | 300W blurred                                                     |           3.36907 |               0        | TestDiff | NME_mean |      0.103017  |        -0.1 | False    |
-|  5 | OpenCV  | entire face   | (Cached (300W) with head-pose) filtered using 'positive_roll'    |           1.97436 |               0        | TestDiff | NME_mean |     -0.0779265 |        -0.1 | False    |
-|  6 | OpenCV  | entire face   | (Cached (300W) with head-pose) filtered using 'negative_roll'    |           3.42529 |               0        | TestDiff | NME_mean |      0.0194816 |        -0.1 | False    |
-|  7 | OpenCV  | entire face   | (Cached (300W) with ethnicity) filtered using 'white_ethnicity'  |           3.26036 |               0        | TestDiff | NME_mean |     -0.196134  |        -0.1 | True     |
-|  8 | OpenCV  | entire face   | (Cached (300W) with ethnicity) filtered using 'latino_ethnicity' |           2.13918 |               0        | TestDiff | NME_mean |      0.784538  |        -0.1 | False    |
+|  0 | OpenCV  | left half     | 300W cropped on left half                                        |           41.3459 |              0.646324  | TestDiff | NME_mean |      2.42248   |        -0.1 | False    |
+|  1 | OpenCV  | upper half    | 300W cropped on upper half                                       |           75.2639 |              0.740588  | TestDiff | NME_mean |      0.114283  |        -0.1 | False    |
+|  2 | OpenCV  | entire face   | 300W resizing with ratios: 0.5                                   |           75.8891 |              0.09      | TestDiff | NME_mean |      0.152531  |        -0.1 | False    |
+|  3 | OpenCV  | entire face   | 300W altered with color mode 7                                   |          112.853  |              0.07      | TestDiff | NME_mean |      0.190853  |        -0.1 | False    |
+|  4 | OpenCV  | entire face   | 300W blurred                                                     |          103.561  |              0.06      | TestDiff | NME_mean |      0.359308  |        -0.1 | False    |
+|  5 | OpenCV  | entire face   | (Cached (300W) with head-pose) filtered using 'positive_roll'    |           85.5028 |              0.0834783 | TestDiff | NME_mean |     -0.0834604 |        -0.1 | False    |
+|  6 | OpenCV  | entire face   | (Cached (300W) with head-pose) filtered using 'negative_roll'    |           84.4564 |              0.077037  | TestDiff | NME_mean |      0.0701067 |        -0.1 | False    |
+|  7 | OpenCV  | entire face   | (Cached (300W) with ethnicity) filtered using 'white_ethnicity'  |           94.7254 |              0.0694118 | TestDiff | NME_mean |     -0.189798  |        -0.1 | True     |
+|  8 | OpenCV  | entire face   | (Cached (300W) with ethnicity) filtered using 'latino_ethnicity' |           63.253  |              0.04      | TestDiff | NME_mean |     -0.0862391 |        -0.1 | False    |
