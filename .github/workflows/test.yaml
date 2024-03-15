@@ -14,7 +14,7 @@
 
 name: Show current gcloud auth
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   show-auth:
