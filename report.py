@@ -18,6 +18,8 @@ from giskard_vision.landmark_detection.tests.performance import NMEMean
 from giskard_vision.landmark_detection.marks.facial_parts import FacialParts
 from giskard_vision.landmark_detection.tests.report import Report
 
+from models import MediapipeWrapper
+
 dl_ref = DataLoader300W(dir_path="300W")  # --> when running on the downloaded data
 # dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
 
@@ -79,6 +81,7 @@ dataloaders_list = [
 models_list = [
     FaceAlignmentWrapper(model=FaceAlignment(LandmarksType.TWO_D, device="cpu", flip_input=False)),
     OpenCVWrapper(),
+    MediapipeWrapper(),
 ]
 
 # models_list = [models_list[1]]
