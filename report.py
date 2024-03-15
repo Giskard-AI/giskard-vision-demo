@@ -1,5 +1,6 @@
 from face_alignment import FaceAlignment, LandmarksType
 from datetime import datetime
+from models import MediapipeWrapper
 
 from giskard_vision.landmark_detection.dataloaders.loaders import DataLoaderFFHQ, DataLoader300W
 from giskard_vision.landmark_detection.dataloaders.wrappers import (
@@ -17,6 +18,8 @@ from giskard_vision.landmark_detection.models.wrappers import OpenCVWrapper, Fac
 from giskard_vision.landmark_detection.tests.performance import NMEMean
 from giskard_vision.landmark_detection.marks.facial_parts import FacialParts
 from giskard_vision.landmark_detection.tests.report import Report
+
+
 
 #dl_ref = DataLoader300W(dir_path="300W") # --> when running on the downloaded data
 dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
@@ -79,6 +82,7 @@ dataloaders_list = [
 models_list = [
     FaceAlignmentWrapper(model=FaceAlignment(LandmarksType.TWO_D, device="cpu", flip_input=False)),
     OpenCVWrapper(),
+    MediapipeWrapper(),
 ]
 
 # models_list = [models_list[1]]
@@ -88,4 +92,4 @@ report = Report(models_list, dataloaders_list, dataloader_ref=dl_ref)
 df = report.to_dataframe()
 
 current_time = str(datetime.now()).replace(" ", "")
-df.to_markdown("report_"+current_time+".md")
+df.to_markdown("report_" + current_time + ".md")
