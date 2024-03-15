@@ -1,5 +1,6 @@
 from face_alignment import FaceAlignment, LandmarksType
 from datetime import datetime
+from models import MediapipeWrapper
 
 from giskard_vision.landmark_detection.dataloaders.loaders import DataLoaderFFHQ, DataLoader300W
 from giskard_vision.landmark_detection.dataloaders.wrappers import (
@@ -18,10 +19,10 @@ from giskard_vision.landmark_detection.tests.performance import NMEMean
 from giskard_vision.landmark_detection.marks.facial_parts import FacialParts
 from giskard_vision.landmark_detection.tests.report import Report
 
-from models import MediapipeWrapper
 
-dl_ref = DataLoader300W(dir_path="300W")  # --> when running on the downloaded data
-# dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
+
+#dl_ref = DataLoader300W(dir_path="300W") # --> when running on the downloaded data
+dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
 
 # cropping
 dl_cropped_left = CroppedDataLoader(dl_ref, part=FacialParts.LEFT_HALF.value)
