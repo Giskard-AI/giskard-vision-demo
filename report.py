@@ -80,7 +80,7 @@ dataloaders_list = [
 ]
 
 models_list = [
-    FaceAlignmentWrapper(model=FaceAlignment(LandmarksType.TWO_D, device="cpu", flip_input=False, face_detector='dlib')),
+    FaceAlignmentWrapper(model=FaceAlignment(LandmarksType.TWO_D, device="cpu", flip_input=False)),
     OpenCVWrapper(),
     MediapipeWrapper(),
 ]
