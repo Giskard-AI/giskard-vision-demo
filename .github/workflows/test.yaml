@@ -40,6 +40,17 @@ jobs:
       id: giskard_scan
       run: |
         mprof run python3.10 report.py
+
+    - name: Memory profiling summary
+      uses: test-summary/action@v2
+      with:
+        paths: "mprofile_*.dat"
+      if: always()
+
+    - name: Update readme ⬆️
+      id: giskard_scan
+      run: |
+        mprof run python3.10 report.py
         output=$(find . -iname "report_*.md" -exec basename {} ';' -maxdepth 1)
         mkdir -p reports
         cp $output reports/.
