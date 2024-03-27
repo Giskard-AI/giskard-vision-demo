@@ -31,10 +31,10 @@ jobs:
     - name: 'Use gcloud CLI'
       run: 'gcloud info' 
 
-    - name: Download the 300W indoor dataset
-      id: download_dataset
-      run: |
-        sh download_300W.sh
+    #- name: Download the 300W indoor dataset
+    #  id: download_dataset
+    #  run: |
+    #    sh download_300W.sh
 
     - name: Run the Giskard report 🐢
       id: giskard_scan
