@@ -39,7 +39,7 @@ jobs:
     - name: Run the Giskard report 🐢
       id: giskard_scan
       run: |
-        python3.10 report.py
+        mprof run python3.10 report.py
         output=$(find . -iname "report_*.md" -exec basename {} ';' -maxdepth 1)
         mkdir -p reports
         cp $output reports/.
