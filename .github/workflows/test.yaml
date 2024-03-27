@@ -48,7 +48,7 @@ jobs:
       if: always()
 
     - name: Update readme ⬆️
-      id: giskard_scan
+      id: update_readme
       run: |
         mprof run python3.10 report.py
         output=$(find . -iname "report_*.md" -exec basename {} ';' -maxdepth 1)
