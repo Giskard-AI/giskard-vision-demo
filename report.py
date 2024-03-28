@@ -47,7 +47,7 @@ def negative_roll(elt):
     return elt[2]["headPose"]["roll"] < 0
 
 
-cached_dl = CachedDataLoader(HeadPoseDataLoader(dl_ref), cache_size=None, cache_img=False, cache_marks=False)
+cached_dl = HeadPoseDataLoader(dl_ref)
 dl_positive_roll = FilteredDataLoader(cached_dl, positive_roll)
 dl_negative_roll = FilteredDataLoader(cached_dl, negative_roll)
 
@@ -61,9 +61,8 @@ def latino_ethnicity(elt):
     return elt[2]["ethnicity"] == "latino hispanic"
 
 
-cached_dl = CachedDataLoader(
-    EthnicityDataLoader(dl_ref, ethnicity_map={"indian": "asian"}), cache_size=None, cache_img=False, cache_marks=False
-)
+cached_dl = EthnicityDataLoader(dl_ref, ethnicity_map={"indian": "asian"})
+
 dl_white = FilteredDataLoader(cached_dl, white_ethnicity)
 dl_latino = FilteredDataLoader(cached_dl, latino_ethnicity)
 
