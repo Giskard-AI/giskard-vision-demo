@@ -50,8 +50,8 @@ jobs:
     - name: Update readme ⬆️
       id: update_readme
       run: |
-        mprof run python3.10 report.py
         output=$(find . -iname "report_*.md" -exec basename {} ';' -maxdepth 1)
+        echo $output
         mkdir -p reports
         cp $output reports/.
         cp reports/$output reports/latest.md
