@@ -21,8 +21,8 @@ from giskard_vision.landmark_detection.tests.report import Report
 
 
 
-#dl_ref = DataLoader300W(dir_path="300W") # --> when running on the downloaded data
-dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
+dl_ref = DataLoader300W(dir_path="300W") # --> when running on the downloaded data
+#dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
 
 # cropping
 dl_cropped_left = CroppedDataLoader(dl_ref, part=FacialParts.LEFT_HALF.value)
