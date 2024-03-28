@@ -40,16 +40,6 @@ jobs:
       id: giskard_scan
       run: |
         mprof run python3.10 report.py
-
-    - uses: actions/upload-artifact@v4
-      with:
-        name: memory_profiling
-        path: mprofile_*.dat
-      if: always()
-
-    - name: Update readme ⬆️
-      id: update_readme
-      run: |
         output=$(find . -iname "report_*.md" -exec basename {} ';' -maxdepth 1)
         echo $output
         mkdir -p reports
@@ -57,6 +47,12 @@ jobs:
         cp reports/$output reports/latest.md
         rm README.md
         cat README_template.md reports/latest.md >> README.md
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: memory_profiling
+        path: mprofile_*.dat
+      if: always()
 
     - name: Extract branch name 🌲
       shell: bash
