@@ -85,7 +85,7 @@ models_list = [
     MediapipeWrapper(),
 ]
 
-# models_list = [models_list[1]]
+models_list = [models_list[1]]
 
 class MyReport(Report):
     default_rel_threshold = 0
