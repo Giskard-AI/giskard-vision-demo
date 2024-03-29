@@ -50,7 +50,7 @@ jobs:
         rm README.md
         cat README_template.md reports/latest_summary_report.md >> sum_README.md
         echo " " >> sum_README.md
-        echo "# Full Report" >> sum_README.md
+        echo "## Full Report" >> sum_README.md
         cat sum_README.md reports/latest_full_report.md >> README.md
         rm sum_README.md
 
