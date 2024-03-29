@@ -37,7 +37,7 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
 | 24 | white_ethnicity          | FaceAlignment | ✓                    |                         | ✓                            |
 | 25 | white_ethnicity          | Mediapipe     |                      | ✓                       |                              |
 | 26 | white_ethnicity          | OpenCV        |                      |                         |                              | 
-# Full Report
+## Full Report
 |    | criteria                 | model         | test     | metric   |   metric_value | Best(metric_value)   |   prediction_time | Best(prediction_time)   |   prediction_fail_rate | Best(prediction_fail_rate)   |   group |
 |---:|:-------------------------|:--------------|:---------|:---------|---------------:|:---------------------|------------------:|:------------------------|-----------------------:|:-----------------------------|--------:|
 |  0 | altered color            | FaceAlignment | TestDiff | NME_mean |     -0.186222  |                      |         106.932   |                         |              0.02      | ✓                            |       0 |
