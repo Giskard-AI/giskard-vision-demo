@@ -1,8 +1,7 @@
 from face_alignment import FaceAlignment, LandmarksType
-from datetime import datetime
 from models import MediapipeWrapper
 
-from giskard_vision.landmark_detection.dataloaders.loaders import DataLoaderFFHQ, DataLoader300W
+from giskard_vision.landmark_detection.dataloaders.loaders import DataLoader300W
 from giskard_vision.landmark_detection.dataloaders.wrappers import (
     CroppedDataLoader,
     ResizedDataLoader,
@@ -15,14 +14,13 @@ from giskard_vision.landmark_detection.dataloaders.wrappers import (
 )
 
 from giskard_vision.landmark_detection.models.wrappers import OpenCVWrapper, FaceAlignmentWrapper
-from giskard_vision.landmark_detection.tests.performance import NMEMean
 from giskard_vision.landmark_detection.marks.facial_parts import FacialParts
 from giskard_vision.landmark_detection.tests.report import Report
 
 
 
 dl_ref = DataLoader300W(dir_path="300W") # --> when running on the downloaded data
-#dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
+# dl_ref = DataLoader300W(dir_path="300W_sample/sample") # --> just for debugging
 
 # cropping
 dl_cropped_left = CroppedDataLoader(dl_ref, part=FacialParts.LEFT_HALF.value)
@@ -85,14 +83,6 @@ models_list = [
     MediapipeWrapper(),
 ]
 
-#models_list = [models_list[1]]
+report = Report(models_list, dataloaders_list, dataloader_ref=dl_ref)
 
-class MyReport(Report):
-    default_rel_threshold = 0
-
-report = MyReport(models_list, dataloaders_list, dataloader_ref=dl_ref)
-
-df = report.to_dataframe()
-
-current_time = str(datetime.now()).replace(" ", "-")
-df.to_markdown("report_" + current_time + ".md")
+report.to_markdown()

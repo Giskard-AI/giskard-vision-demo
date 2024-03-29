@@ -1,4 +1,4 @@
-absl-py==1.4.0
+absl-py==2.1.0
 annotated-types==0.6.0
 anyio==4.2.0
 appnope==0.1.3
@@ -41,14 +41,14 @@ fastjsonschema==2.19.1
 filelock==3.13.1
 fire==0.5.0
 Flask==3.0.1
-flatbuffers==23.5.26
+flatbuffers==24.3.25
 fonttools==4.47.2
 fqdn==1.5.1
 fsspec==2023.12.2
 gast==0.5.4
 gdown==5.0.1
 giskard==2.7.0
--e git+https://github.com/Giskard-AI/giskard-vision.git@bb4752cf36e40df77133ef65f20991f0b36f32ce#egg=giskard_vision
+-e git+https://github.com/Giskard-AI/giskard-vision.git@33d8b0b6919e29c488b6cde88e8fb19ccfbb5609#egg=giskard_vision
 gitdb==4.0.11
 GitPython==3.1.41
 google-auth==2.27.0
@@ -70,6 +70,8 @@ ipython==8.20.0
 isoduration==20.11.0
 isort==5.13.2
 itsdangerous==2.1.2
+jax==0.4.25
+jaxlib==0.4.25
 jedi==0.19.1
 Jinja2==3.1.3
 joblib==1.3.2
@@ -96,6 +98,7 @@ Markdown==3.5.2
 MarkupSafe==2.1.4
 matplotlib==3.8.2
 matplotlib-inline==0.1.6
+mediapipe==0.10.9
 mistune==3.0.2
 mixpanel==4.10.0
 ml-dtypes==0.2.0
@@ -118,7 +121,7 @@ opencv-contrib-python==4.9.0.80
 opencv-python==4.9.0.80
 opt-einsum==3.3.0
 overrides==7.7.0
-packaging==23.2
+packaging==24.0
 pandas==2.2.0
 pandocfilters==1.5.1
 parso==0.8.3
@@ -142,7 +145,7 @@ pydantic==2.6.0
 pydantic_core==2.16.1
 Pygments==2.17.2
 PyJWT==2.8.0
-pyparsing==3.1.1
+pyparsing==3.1.2
 PySocks==1.7.1
 pytest==8.0.0
 python-dateutil==2.8.2
@@ -168,6 +171,7 @@ six==1.16.0
 sixdrepnet==0.1.6
 smmap==5.0.1
 sniffio==1.3.0
+sounddevice==0.4.6
 soupsieve==2.5
 sqlparse==0.4.4
 stack-data==0.6.3
