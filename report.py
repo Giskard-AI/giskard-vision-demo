@@ -85,4 +85,5 @@ models_list = [
 
 report = Report(models_list, dataloaders_list, dataloader_ref=dl_ref)
 
-report.to_markdown()
+report.to_markdown(summary=True)
+report.to_markdown(summary=False)

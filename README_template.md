@@ -7,4 +7,4 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
 - Performance on images containing people from different ethnicities (estimated with `DeepFace`: https://github.com/serengil/deepface)
 - Robustness against image perturbations like blurring, resizing, recoloring (performed by `opencv`: https://github.com/opencv/opencv)
 
-Here're the results of the latest run:
+## Summary of the latest run:
