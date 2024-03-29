@@ -47,7 +47,7 @@ def negative_roll(elt):
     return elt[2]["headPose"]["roll"] < 0
 
 
-cached_dl = HeadPoseDataLoader(dl_ref)
+cached_dl = CachedDataLoader(HeadPoseDataLoader(dl_ref), cache_size=None, cache_img=False, cache_marks=False)
 dl_positive_roll = FilteredDataLoader(cached_dl, positive_roll)
 dl_negative_roll = FilteredDataLoader(cached_dl, negative_roll)
 
@@ -61,8 +61,9 @@ def latino_ethnicity(elt):
     return elt[2]["ethnicity"] == "latino hispanic"
 
 
-cached_dl = EthnicityDataLoader(dl_ref, ethnicity_map={"indian": "asian"})
-
+cached_dl = CachedDataLoader(
+    EthnicityDataLoader(dl_ref, ethnicity_map={"indian": "asian"}), cache_size=None, cache_img=False, cache_marks=False
+)
 dl_white = FilteredDataLoader(cached_dl, white_ethnicity)
 dl_latino = FilteredDataLoader(cached_dl, latino_ethnicity)
 
@@ -79,12 +80,12 @@ dataloaders_list = [
 ]
 
 models_list = [
-    FaceAlignmentWrapper(model=FaceAlignment(LandmarksType.TWO_D, device="cpu", flip_input=False)),
+    FaceAlignmentWrapper(model=FaceAlignment(LandmarksType.TWO_D, device="cpu", flip_input=False, face_detector='blazeface')),
     OpenCVWrapper(),
     MediapipeWrapper(),
 ]
 
-# models_list = [models_list[1]]
+#models_list = [models_list[1]]
 
 class MyReport(Report):
     default_rel_threshold = 0
