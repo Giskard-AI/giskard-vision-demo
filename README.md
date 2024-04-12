@@ -43,6 +43,18 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
   </thead>
   <tbody>
     <tr>
+      <th>300W</th>
+      <td></td>
+      <td>✓</td>
+      <td></td>
+      <td>✓</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>✓</td>
+    </tr>
+    <tr>
       <th>altered color</th>
       <td></td>
       <td>✓</td>
@@ -50,8 +62,8 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
       <td>✓</td>
       <td></td>
       <td></td>
-      <td></td>
       <td>✓</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -122,8 +134,8 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
       <td>✓</td>
       <td></td>
       <td></td>
-      <td></td>
       <td>✓</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -146,40 +158,43 @@ This is a CI/CD example of an evaluation report produced by `giskard-vision` whi
       <td>✓</td>
       <td></td>
       <td></td>
-      <td></td>
-      <td></td>
       <td>✓</td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
 
 ## Full Report
-|    | criteria                 | model         | test     | metric   |   metric_value | Best(metric_value)   |   prediction_time | Best(prediction_time)   |   prediction_fail_rate | Best(prediction_fail_rate)   |
-|---:|:-------------------------|:--------------|:---------|:---------|---------------:|:---------------------|------------------:|:------------------------|-----------------------:|:-----------------------------|
-|  0 | altered color            | FaceAlignment | TestDiff | NME_mean |     -0.186222  |                      |         104.175   |                         |              0.02      | ✓                            |
-|  1 | altered color            | Mediapipe     | TestDiff | NME_mean |     -0.2253    | ✓                    |           8.56092 | ✓                       |              0.8       |                              |
-|  2 | altered color            | OpenCV        | TestDiff | NME_mean |      0.244796  |                      |          54.6988  |                         |              0.14      |                              |
-|  3 | blurred                  | FaceAlignment | TestDiff | NME_mean |     -0.0451077 | ✓                    |         109.475   |                         |              0.04      | ✓                            |
-|  4 | blurred                  | Mediapipe     | TestDiff | NME_mean |      0.0566332 |                      |          10.1168  | ✓                       |              0.09      |                              |
-|  5 | blurred                  | OpenCV        | TestDiff | NME_mean |      0.410555  |                      |          51.1825  |                         |              0.12      |                              |
-|  6 | cropped on left half     | FaceAlignment | TestDiff | NME_mean |     -0.553663  | ✓                    |          79.8703  |                         |              0.820441  | ✓                            |
-|  7 | cropped on left half     | Mediapipe     | TestDiff | NME_mean |     -0.170099  |                      |           8.61944 | ✓                       |              0.951029  |                              |
-|  8 | cropped on left half     | OpenCV        | TestDiff | NME_mean |     -0.0978757 |                      |          39.5248  |                         |              0.825882  |                              |
-|  9 | cropped on upper half    | FaceAlignment | TestDiff | NME_mean |     -0.541586  |                      |          75.5163  |                         |              0.782941  | ✓                            |
-| 10 | cropped on upper half    | Mediapipe     | TestDiff | NME_mean |     -0.2261    |                      |           8.67485 | ✓                       |              0.941765  |                              |
-| 11 | cropped on upper half    | OpenCV        | TestDiff | NME_mean |     -0.720575  | ✓                    |          37.8815  |                         |              0.978824  |                              |
-| 12 | latino_ethnicity         | FaceAlignment | TestDiff | NME_mean |      0.371225  |                      |          56.0924  |                         |              0.142857  |                              |
-| 13 | latino_ethnicity         | Mediapipe     | TestDiff | NME_mean |      0.038642  |                      |           5.24106 | ✓                       |              0.285714  |                              |
-| 14 | latino_ethnicity         | OpenCV        | TestDiff | NME_mean |     -0.66035   | ✓                    |          31.2278  |                         |              0         | ✓                            |
-| 15 | negative_roll            | FaceAlignment | TestDiff | NME_mean |     -0.576123  | ✓                    |          74.778   |                         |              0.0416667 | ✓                            |
-| 16 | negative_roll            | Mediapipe     | TestDiff | NME_mean |     -0.0123974 |                      |           6.75812 | ✓                       |              0.0833333 |                              |
-| 17 | negative_roll            | OpenCV        | TestDiff | NME_mean |     -0.505026  |                      |          38.0079  |                         |              0.125     |                              |
-| 18 | positive_roll            | FaceAlignment | TestDiff | NME_mean |      0.54085   |                      |          79.4839  |                         |              0.0576923 | ✓                            |
-| 19 | positive_roll            | Mediapipe     | TestDiff | NME_mean |      0.0147429 | ✓                    |           7.58607 | ✓                       |              0.288462  |                              |
-| 20 | positive_roll            | OpenCV        | TestDiff | NME_mean |      0.505026  |                      |          44.1633  |                         |              0.192308  |                              |
-| 21 | resized with ratios: 0.5 | FaceAlignment | TestDiff | NME_mean |      0.0185174 | ✓                    |         106.595   |                         |              0.04      | ✓                            |
-| 22 | resized with ratios: 0.5 | Mediapipe     | TestDiff | NME_mean |      0.0358656 |                      |           9.7031  | ✓                       |              0.12      |                              |
-| 23 | resized with ratios: 0.5 | OpenCV        | TestDiff | NME_mean |      0.292944  |                      |          38.0669  |                         |              0.18      |                              |
-| 24 | white_ethnicity          | FaceAlignment | TestDiff | NME_mean |     -0.604868  |                      |          78.4921  |                         |              0.0384615 | ✓                            |
-| 25 | white_ethnicity          | Mediapipe     | TestDiff | NME_mean |      0.0260865 |                      |           7.55602 | ✓                       |              0.173077  |                              |
-| 26 | white_ethnicity          | OpenCV        | TestDiff | NME_mean |     -0.611593  | ✓                    |          42.2883  |                         |              0.0769231 |                              |
+|    | criteria                 | model         | test   | metric   |   metric_value | Best(metric_value)   |   prediction_time | Best(prediction_time)   |   prediction_fail_rate | Best(prediction_fail_rate)   |
+|---:|:-------------------------|:--------------|:-------|:---------|---------------:|:---------------------|------------------:|:------------------------|-----------------------:|:-----------------------------|
+|  0 | 300W                     | FaceAlignment | Test   | NME_mean |      0.214453  |                      |         64.1483   |                         |              0.05      | ✓                            |
+|  1 | 300W                     | Mediapipe     | Test   | NME_mean |      3.08786   |                      |          4.93624  | ✓                       |              0.19      |                              |
+|  2 | 300W                     | OpenCV        | Test   | NME_mean |      0.195668  | ✓                    |         29.9249   |                         |              0.16      |                              |
+|  3 | altered color            | FaceAlignment | Test   | NME_mean |      0.174517  | ✓                    |         58.1809   |                         |              0.02      | ✓                            |
+|  4 | altered color            | Mediapipe     | Test   | NME_mean |      2.5315    |                      |          3.96894  | ✓                       |              0.79      |                              |
+|  5 | altered color            | OpenCV        | Test   | NME_mean |      0.243567  |                      |         28.037    |                         |              0.14      |                              |
+|  6 | blurred                  | FaceAlignment | Test   | NME_mean |      0.204779  | ✓                    |         63.3339   |                         |              0.04      | ✓                            |
+|  7 | blurred                  | Mediapipe     | Test   | NME_mean |      3.26273   |                      |          5.59357  | ✓                       |              0.09      |                              |
+|  8 | blurred                  | OpenCV        | Test   | NME_mean |      0.331916  |                      |         24.6266   |                         |              0.12      |                              |
+|  9 | cropped on left half     | FaceAlignment | Test   | NME_mean |      0.0950334 | ✓                    |         22.3192   |                         |              0.820441  | ✓                            |
+| 10 | cropped on left half     | Mediapipe     | Test   | NME_mean |      2.39931   |                      |          3.95156  | ✓                       |              0.951029  |                              |
+| 11 | cropped on left half     | OpenCV        | Test   | NME_mean |      0.17521   |                      |         11.1745   |                         |              0.825882  |                              |
+| 12 | cropped on upper half    | FaceAlignment | Test   | NME_mean |      0.0948426 |                      |         26.6648   |                         |              0.782941  | ✓                            |
+| 13 | cropped on upper half    | Mediapipe     | Test   | NME_mean |      2.19568   |                      |          4.02357  | ✓                       |              0.941765  |                              |
+| 14 | cropped on upper half    | OpenCV        | Test   | NME_mean |      0.0519043 | ✓                    |         10.7939   |                         |              0.978824  |                              |
+| 15 | latino_ethnicity         | FaceAlignment | Test   | NME_mean |      0.294063  |                      |          4.06596  |                         |              0.142857  |                              |
+| 16 | latino_ethnicity         | Mediapipe     | Test   | NME_mean |      3.20718   |                      |          0.469689 | ✓                       |              0.285714  |                              |
+| 17 | latino_ethnicity         | OpenCV        | Test   | NME_mean |      0.0664585 | ✓                    |          3.8904   |                         |              0         | ✓                            |
+| 18 | negative_roll            | FaceAlignment | Test   | NME_mean |      0.0909015 | ✓                    |         25.7093   |                         |              0.0416667 | ✓                            |
+| 19 | negative_roll            | Mediapipe     | Test   | NME_mean |      3.04958   |                      |          2.03313  | ✓                       |              0.0833333 |                              |
+| 20 | negative_roll            | OpenCV        | Test   | NME_mean |      0.0968505 |                      |         10.9992   |                         |              0.125     |                              |
+| 21 | positive_roll            | FaceAlignment | Test   | NME_mean |      0.330439  | ✓                    |         30.441    |                         |              0.0576923 | ✓                            |
+| 22 | positive_roll            | Mediapipe     | Test   | NME_mean |      3.13338   |                      |          2.88912  | ✓                       |              0.288462  |                              |
+| 23 | positive_roll            | OpenCV        | Test   | NME_mean |      0.411305  |                      |         17.3002   |                         |              0.192308  |                              |
+| 24 | resized with ratios: 0.5 | FaceAlignment | Test   | NME_mean |      0.218424  | ✓                    |         59.4045   |                         |              0.04      | ✓                            |
+| 25 | resized with ratios: 0.5 | Mediapipe     | Test   | NME_mean |      3.19861   |                      |          5.10067  | ✓                       |              0.12      |                              |
+| 26 | resized with ratios: 0.5 | OpenCV        | Test   | NME_mean |      0.252987  |                      |         10.9042   |                         |              0.18      |                              |
+| 27 | white_ethnicity          | FaceAlignment | Test   | NME_mean |      0.084737  | ✓                    |         29.2241   |                         |              0.0384615 | ✓                            |
+| 28 | white_ethnicity          | Mediapipe     | Test   | NME_mean |      3.16841   |                      |          2.83826  | ✓                       |              0.173077  |                              |
+| 29 | white_ethnicity          | OpenCV        | Test   | NME_mean |      0.0986856 |                      |         15.3149   |                         |              0.0769231 |                              |
