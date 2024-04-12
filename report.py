@@ -73,6 +73,7 @@ dl_white = FilteredDataLoader(cached_dl, white_ethnicity)
 dl_latino = FilteredDataLoader(cached_dl, latino_ethnicity)
 
 dataloaders_list = [
+    dl_ref,
     dl_cropped_left,
     dl_cropped_upper,
     dl_resized,
@@ -97,7 +98,7 @@ models_list = [
     MediapipeWrapper(),
 ]
 
-report = Report(models_list, dataloaders_list, dataloader_ref=dl_ref)
+report = Report(models_list, dataloaders_list)
 
 report.to_html(summary=True)
 report.to_markdown(summary=False)
