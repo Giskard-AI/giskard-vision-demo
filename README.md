@@ -1,4 +1,4 @@
-# Facial Landmark detection
+# Facial Landmark Detection Demo 
 
 This is a CI/CD example of an evaluation report produced by `giskard-vision` which compares a set of facial landmark detection models based on the following criteria:
 
